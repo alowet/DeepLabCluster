@@ -1,5 +1,7 @@
 # DeepLabCluster
-Quick startup guide to using the FAS cluster to train, evaluate, and analyze video with [DeepLabCut](https://github.com/AlexEMG/DeepLabCut). If you are unfamiliar with cluster computing, a good place to start is [here](https://docs.google.com/document/d/1HxHSsm9UJd7QF6eIsLBPAaDiSg4_w653RKRPY_2-6TI/edit?usp=sharing) and [here](https://www.rc.fas.harvard.edu/resources/quickstart-guide/).
+Quick startup guide to using the FAS cluster to train, evaluate, and analyze video with [DeepLabCut](https://github.com/AlexEMG/DeepLabCut). Some modifications have been made to accommodate parallelization and alternative directory structures at the analysis phase.
+
+If you are unfamiliar with cluster computing, a good place to start is [here](https://docs.google.com/document/d/1HxHSsm9UJd7QF6eIsLBPAaDiSg4_w653RKRPY_2-6TI/edit?usp=sharing) and [here](https://www.rc.fas.harvard.edu/resources/quickstart-guide/).
 
 # Training a new neural network
 ## I. Label Frames Locally
