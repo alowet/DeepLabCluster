@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH --job-name=Pupil_Training_LightsON0
+#SBATCH --output=./job-scripts/out/%x.%A_%a.%N.%j.out
+#SBATCH --error=./job-scripts/err/%x.%A_%a.%N.%j.err
+#SBATCH --time=0-02:00
+#SBATCH --mem=12000
+#SBATCH -p fas_gpu
+#SBATCH --gres=gpu:1
+#SBATCH --mail-type=FAIL,TIME_LIMIT,END
+#SBATCH --mail-user=$alowet@g.harvard.edu
+#SBATCH --export=ALL
+#SBATCH --exclude=shakgpu[01-50],aagk80gpu[09,10,11,39,50,60]
+cd /n/holylfs/LABS/uchida_lab/globus_alowet/DeepLabCut/analysis-tools/parallel-session
+module load Anaconda3/5.0.1-fasrc01
+module load cuda/8.0.61-fasrc01 cudnn/6.0_cuda8.0-fasrc01
+module load bazel/0.13.0-fasrc01 gcc/4.9.3-fasrc01 hdf5/1.8.12-fasrc08 cmake
+module load ffmpeg/2.7.2-fasrc01
+source activate dcut_tf13
+srun -N 1 python3 -u AnalyzeVideosSession.py /n/holylfs/TRANSFER/alowet/DeepLabCut/videos/Pupil_Training_LightsON0 0
+srun -N 1 python3 -u MakingLabeledVideoSession.py /n/holylfs/TRANSFER/alowet/DeepLabCut/videos/Pupil_Training_LightsON0 1

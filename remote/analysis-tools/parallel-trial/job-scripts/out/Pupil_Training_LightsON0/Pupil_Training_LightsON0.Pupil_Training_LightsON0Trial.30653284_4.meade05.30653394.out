@@ -1,0 +1,4 @@
+../../pose-tensorflow/models/Adam_PupilsOct24-trainset95shuffle1
+['snapshot-850000' 'snapshot-900000' 'snapshot-950000' 'snapshot-1000000'
+ 'snapshot-1030000']
+Video already analyzed! /n/holylfs/TRANSFER/alowet/DeepLabCut/videos/Pupil_Training_LightsON0/Pupil_Training_LightsON0_4DeepCut_resnet50_Adam_PupilsOct24shuffle1_1030000.h5
