@@ -66,9 +66,9 @@ python3 Step4_GenerateTrainingFileFromLabelledData.py
 ## II. Configuring the Anaconda environment on the cluster
 
 ##### 1. Copy all folders in the `remote` directory of this repo to your directory on the cluster
-This directory is probably called something like `/n/holylfs/LABS/uchida_lab/globus_$YOUR_RC_ID`. Since your folders are currently local, you'll have to do this with either `scp` or a client like FileZilla, e.g.
+This directory is probably called something like `/n/holystore01/LABS/uchida_users/Users/$YOUR_RC_ID`. Since your folders are currently local, you'll have to do this with either `scp` or a client like FileZilla, e.g.
 ```
-scp -r remote $YOUR_RC_ID@login.fas.rc.harvard.edu:/n/holylfs/LABS/uchida_lab/globus_$YOUR_RC_ID/
+scp -r remote $YOUR_RC_ID@login.fas.rc.harvard.edu:/n/holystore01/LABS/uchida_users/Users/$YOUR_RC_ID
 ```
 You'll have to make sure to overwrite the default config.py file in the `configs` folder with your own `config.py`, which is currently only local!
 
@@ -82,7 +82,7 @@ For help on how to use the cluster, see this page: https://www.rc.fas.harvard.ed
 ##### 3. Load the Anaconda environment from a .yml file.
 First, `cd` to whereever you uploaded the contents of the `remote` directory. You may want to rename it to DeepLabCut, e.g.
 ```
-cd /n/holylfs/LABS/uchida_lab/globus_$YOUR_RC_ID/
+cd /n/holystore01/LABS/uchida_users/Users/$YOUR_RC_ID
 mv remote DeepLabCut
 cd DeepLabCut
 ```
@@ -107,8 +107,8 @@ curl http://download.tensorflow.org/models/resnet_v1_101_2016_08_28.tar.gz | tar
 ##### 2. Copy the two folders generated from the `Formatting the data II` step to `/pose-tensorflow/models/`.
 Since your folders are currently local, you'll have to do this with either `scp` or a client like FileZilla. For example, assuming you extracted everything to a directory titled `DeepLabCut`, then from a *local* command line, you'd run:
 ```
-scp -r YOURexperimentNameTheDate-trainset95shuffle1 $YOUR_RC_ID@login.fas.rc.harvard.edu:/n/holylfs/LABS/uchida_lab/globus_$YOUR_RC_ID/DeepLabCut/pose-tensorflow/models/
-scp -r UnaugmentedDataSet_YOURexperimentNameTheDate $YOUR_RC_ID@login.fas.rc.harvard.edu:/n/holylfs/LABS/uchida_lab/globus_$YOUR_RC_ID/DeepLabCut/pose-tensorflow/models/
+scp -r YOURexperimentNameTheDate-trainset95shuffle1 $YOUR_RC_ID@login.fas.rc.harvard.edu:/n/holystore01/LABS/uchida_users/Users/$YOUR_RC_ID/DeepLabCut/pose-tensorflow/models/
+scp -r UnaugmentedDataSet_YOURexperimentNameTheDate $YOUR_RC_ID@login.fas.rc.harvard.edu:/n/holystore01/LABS/uchida_users/Users/$YOUR_RC_ID/DeepLabCut/pose-tensorflow/models/
 ```
 
 ##### 3. Start training
